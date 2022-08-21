@@ -21,19 +21,21 @@ internal partial class Program
         System.Console.WriteLine($"Getting Posts in thread {Thread.CurrentThread.ManagedThreadId}");
         return postsList;
     }
-    // private static List<Data> GetComments(List<Posts> postsList, List<Data> dataList)
-    // {
-    //     foreach (var postItem in postsList)
-    //     {
-    //         var client = new RestClient("https://jsonplaceholder.typicode.com");
-    //         var requestComments = new RestRequest($"comments?postId={postItem.id}", Method.Get);
-    //         var responseComments = await client.ExecuteGetAsync(requestComments);
-    //         var contentComments = responseComments.Content;
-    //         var commentsList = JsonConvert.DeserializeObject<List<Comments>>(contentComments);
-    //         dataList.Add(new Data { post = postItem, comments = commentsList });
-    //     }
-    //     return dataList;
-    // }
+    private static async Task<List<Data>> GetComments(List<Posts> postsList, List<Data> dataList)
+    {
+        var client = new RestClient("https://jsonplaceholder.typicode.com");
+        Parallel.ForEach(postsList, async p =>
+                   {
+                       var requestComments = new RestRequest($"comments?postId={p.id}", Method.Get);
+                       var responseComments = await client.ExecuteGetAsync(requestComments);
+                       var contentComments = responseComments.Content;
+                       var commentsList = JsonConvert.DeserializeObject<List<Comments>>(contentComments);
+                       dataList.Add(new Data { post = p, comments = commentsList });
+                       System.Console.WriteLine($"Getting Comments in thread {Thread.CurrentThread.ManagedThreadId}");
+                       //i++;
+                   });
+        return dataList;
+    }
     static async Task Main(string[] args)
     {
         string dataPath = @"data";
@@ -67,46 +69,52 @@ internal partial class Program
         });
         loadPosts.Wait();
         // Get the comments of post from the API.
-        Task loadComments = Task.Run(() =>
+        int i = 1;
+        foreach (var data in postsList)
         {
-            var client = new RestClient("https://jsonplaceholder.typicode.com");
-            Parallel.For(0, postsList.Count,
-                        index =>
-                       {
-                           var requestComments = new RestRequest($"comments?postId={postsList[index].id}", Method.Get);
-                           var responseComments = client.Get(requestComments);
-                           var contentComments = responseComments.Content;
-                           var commentsList = JsonConvert.DeserializeObject<List<Comments>>(contentComments);
-                           dataList.Add(new Data { post = postsList[index], comments = commentsList });
-                           System.Console.WriteLine($"Getting Comments in thread {Thread.CurrentThread.ManagedThreadId}");
-                       });
+            Console.WriteLine($"Post [{i}] {data.id} ");
+            i++;
+        }
+        i = 0;
+        Task loadComments = Task.Run(async () =>
+        {
+            dataList = await GetComments(postsList, dataList);
         });
         loadComments.Wait();
+         i = 1;
+         
+        Console.WriteLine($"Done total {dataList.Count}");
+       
 
-        foreach (var data in dataList)
-        {
-            Console.WriteLine($"Post {data.post.id} has {data.comments.Count} comments");
-        }
+
+        Task createFiles = Task.Run(() =>
+       {
+           Parallel.ForEach(postsList, data =>
+                      {
+                          string path = $@"data\{data.id}.txt";
+                          using (StreamWriter sw = (File.Exists(path)) ? File.AppendText(path) : File.CreateText(path)) ;
+                      });
+       });
+        createFiles.Wait();
 
         // Write the data to a file.
-        Task t = Task.Run(async () =>
-        {
-            foreach (var item in dataList)
-            {
-                string path = $@"data\{item.post.title}.txt";
-                using (StreamWriter sw = (File.Exists(path)) ? File.AppendText(path) : File.CreateText(path)) ;
-                await File.WriteAllTextAsync(path, "Starting process\n");
-                System.Console.WriteLine($"Processing PostID: {item.post.id} in thread{Thread.CurrentThread.ManagedThreadId}\nTitle: {item.post.title}");
-                await File.AppendAllTextAsync(path, $"(\nPost id: {item.post.id} in thread {Thread.CurrentThread.ManagedThreadId}\n");
-                foreach (var comment in item.comments)
-                {
-                    System.Console.WriteLine($"Comment: {comment.name} in thread {Thread.CurrentThread.ManagedThreadId}");
-                    await File.AppendAllTextAsync(path, $"\nName: {comment.name}\nComment: {comment.body}\n");
-                }
-                await File.AppendAllTextAsync(path, "\n)\n");
-            }
-        });
-        t.Wait();
+        // Task writeToFiles = Task.Run(async () =>
+        // {
+        //     Parallel.ForEach(dataList, async data =>
+        //                {
+        //                    string path = $@"data\{data.post.title}.txt";
+        //                    using (StreamWriter sw = (File.Exists(path)) ? File.AppendText(path) : File.CreateText(path));
+        //                    Parallel.ForEach(data.comments, async comment =>
+        //                         {
+        //                             System.Console.WriteLine($"Comment: {comment.name} in thread {Thread.CurrentThread.ManagedThreadId}");
+        //                             await File.AppendAllTextAsync(path, $"\nName: {comment.name}\nComment: {comment.body}\n");
+        //                         });
+
+        //                   await File.AppendAllTextAsync(path, "\n)\n");
+        //                });
+        // });
+        // writeToFiles.Wait();
+
         Console.WriteLine("\nRun exitoso");
     }
 
