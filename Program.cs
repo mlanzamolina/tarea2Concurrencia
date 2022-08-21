@@ -78,7 +78,7 @@ internal partial class Program
         i = 0;
         Task loadComments = Task.Run(async () =>
         {
-            dataList = await GetComments(postsList, dataList);
+        dataList = await GetComments(postsList, dataList);
         });
         loadComments.Wait();
          i = 1;
