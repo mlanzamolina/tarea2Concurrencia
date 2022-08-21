@@ -17,3 +17,23 @@ C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\bin\Debug\net6.0\J
 C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\bin\Debug\net6.0\RestSharp.dll
 C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\obj\Debug\net6.0\tarea 2.csproj.CopyComplete
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\bin\Debug\net6.0\tarea 2.exe
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\bin\Debug\net6.0\tarea 2.deps.json
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\bin\Debug\net6.0\tarea 2.runtimeconfig.json
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\bin\Debug\net6.0\tarea 2.dll
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\bin\Debug\net6.0\tarea 2.pdb
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\bin\Debug\net6.0\Json.Net.dll
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\bin\Debug\net6.0\RestSharp.dll
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\obj\Debug\net6.0\tarea 2.csproj.AssemblyReference.cache
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\obj\Debug\net6.0\tarea 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\obj\Debug\net6.0\tarea 2.AssemblyInfoInputs.cache
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\obj\Debug\net6.0\tarea 2.AssemblyInfo.cs
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\obj\Debug\net6.0\tarea 2.csproj.CoreCompileInputs.cache
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\obj\Debug\net6.0\tarea 2.csproj.CopyComplete
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\obj\Debug\net6.0\tarea 2.dll
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\obj\Debug\net6.0\refint\tarea 2.dll
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\obj\Debug\net6.0\tarea 2.pdb
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\obj\Debug\net6.0\tarea 2.genruntimeconfig.cache
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\obj\Debug\net6.0\ref\tarea 2.dll
+C:\Users\mlanz\OneDrive\Documents\Unitec\Concurrencia\tarea 2\tarea2Concurrencia\bin\Debug\net6.0\CsvHelper.dll

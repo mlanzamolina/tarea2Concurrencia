@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Wn7+qs328uqZvCIZnpJo9ZIiE9mKzKFWlvSiqGqwkILaJqNdxjHZ1fqTir8k0HNpJvwrMo0nzv1nwuXY7Fgihw==",
+  "dgSpecHash": "n+JECO8+PiFnQ2l8oa6iguEu0SgoHCdhX07FaZZtGv0S1OKV7g/iqT3YJlqcWqOtIq2SQQfmFS2MeR1X4eHR1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mlanz\\OneDrive\\Documents\\Unitec\\Concurrencia\\tarea 2\\tarea 2.csproj",
+  "projectFilePath": "C:\\Users\\mlanz\\OneDrive\\Documents\\Unitec\\Concurrencia\\tarea 2\\tarea2Concurrencia\\tarea 2.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mlanz\\.nuget\\packages\\csvhelper\\28.0.1\\csvhelper.28.0.1.nupkg.sha512",
     "C:\\Users\\mlanz\\.nuget\\packages\\json.net\\1.0.33\\json.net.1.0.33.nupkg.sha512",
     "C:\\Users\\mlanz\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\mlanz\\.nuget\\packages\\restsharp\\108.0.1\\restsharp.108.0.1.nupkg.sha512"

@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "CsvHelper/28.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CsvHelper.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/CsvHelper.dll": {}
+        }
+      },
       "Json.Net/1.0.33": {
         "type": "package",
         "compile": {
@@ -32,6 +41,30 @@
     }
   },
   "libraries": {
+    "CsvHelper/28.0.1": {
+      "sha512": "T/Eid0mP/GeWV1RcxmUPSsBCtOm6wHbFII6iFydPfpIa6cd+siec0KGrLq5uabI8sH6crFi84OA1vNLkp8Lzlw==",
+      "type": "package",
+      "path": "csvhelper/28.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "csvhelper.28.0.1.nupkg.sha512",
+        "csvhelper.nuspec",
+        "lib/net45/CsvHelper.dll",
+        "lib/net45/CsvHelper.xml",
+        "lib/net47/CsvHelper.dll",
+        "lib/net47/CsvHelper.xml",
+        "lib/net5.0/CsvHelper.dll",
+        "lib/net5.0/CsvHelper.xml",
+        "lib/net6.0/CsvHelper.dll",
+        "lib/net6.0/CsvHelper.xml",
+        "lib/netstandard2.0/CsvHelper.dll",
+        "lib/netstandard2.0/CsvHelper.xml",
+        "lib/netstandard2.1/CsvHelper.dll",
+        "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
     "Json.Net/1.0.33": {
       "sha512": "5tE+db6BqhRAvITIVBeRsQorLGshPExfm4FmMRvWWAfs4RxeTbFFj2PIEybwmMW0qR30HKkXDYhq0YkDK2Jtxw==",
       "type": "package",
@@ -92,6 +125,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CsvHelper >= 28.0.1",
       "Json.NET >= 1.0.33",
       "Newtonsoft.Json >= 13.0.1",
       "RestSharp >= 108.0.1"
@@ -103,11 +137,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mlanz\\OneDrive\\Documents\\Unitec\\Concurrencia\\tarea 2\\tarea 2.csproj",
+      "projectUniqueName": "C:\\Users\\mlanz\\OneDrive\\Documents\\Unitec\\Concurrencia\\tarea 2\\tarea2Concurrencia\\tarea 2.csproj",
       "projectName": "tarea 2",
-      "projectPath": "C:\\Users\\mlanz\\OneDrive\\Documents\\Unitec\\Concurrencia\\tarea 2\\tarea 2.csproj",
+      "projectPath": "C:\\Users\\mlanz\\OneDrive\\Documents\\Unitec\\Concurrencia\\tarea 2\\tarea2Concurrencia\\tarea 2.csproj",
       "packagesPath": "C:\\Users\\mlanz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mlanz\\OneDrive\\Documents\\Unitec\\Concurrencia\\tarea 2\\obj\\",
+      "outputPath": "C:\\Users\\mlanz\\OneDrive\\Documents\\Unitec\\Concurrencia\\tarea 2\\tarea2Concurrencia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mlanz\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -134,6 +168,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "CsvHelper": {
+            "target": "Package",
+            "version": "[28.0.1, )"
+          },
           "Json.NET": {
             "target": "Package",
             "version": "[1.0.33, )"
